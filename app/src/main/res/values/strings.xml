@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Goofiz</string>
+    <string name="logo_description">Logo</string>
+    <string name="back_button_description">Retour</string>
+</resources>
