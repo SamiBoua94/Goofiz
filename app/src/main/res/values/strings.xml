@@ -2,4 +2,8 @@
     <string name="app_name">Goofiz</string>
     <string name="logo_description">Logo</string>
     <string name="back_button_description">Retour</string>
+    <string name="home_title">Page d\'accueil</string>
+    <string name="launcherpage">Welcome !</string>
+    <string name="launchersubtitle">For your safety and the safety of others. You must allow all access to continue </string>
+    <string name="home_subtitle">Bienvenue sur Goofiz. Vous avez terminé la validation et vous pouvez continuer.</string>
 </resources>

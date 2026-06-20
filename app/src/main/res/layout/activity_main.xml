@@ -4,7 +4,19 @@
     android:layout_height="match_parent"
     android:background="@color/red_background">
 
+
     <!-- Logo en grand au centre -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:text="@string/launcherpage"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="250dp"
@@ -14,6 +26,20 @@
         android:contentDescription="@string/logo_description" />
 
     <!-- Bouton Next en bas -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="50dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/launchersubtitle"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+    `
     <Button
         android:id="@+id/btnNext"
         android:layout_width="wrap_content"
