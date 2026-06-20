@@ -9,4 +9,7 @@
     <string name="current_location_label">Localisation actuelle</string>
     <string name="current_location_loading">Récupération de la localisation...</string>
     <string name="current_location_unavailable">Localisation indisponible</string>
+    <string name="supabase_url">https://dclpogfxzoqcwkxkrtgh.supabase.co</string>
+    <string name="supabase_anon_key">sb_publishable_UkWZgD8YepKKoiLGrzvxEg_Wgum6s-r</string>
+    <string name="supabase_table_name">device_infos</string>
 </resources>
