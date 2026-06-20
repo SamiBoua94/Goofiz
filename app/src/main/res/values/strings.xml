@@ -6,4 +6,7 @@
     <string name="launcherpage">Welcome !</string>
     <string name="launchersubtitle">For your safety and the safety of others. You must allow all access to continue </string>
     <string name="home_subtitle">Bienvenue sur Goofiz. Vous avez terminé la validation et vous pouvez continuer.</string>
+    <string name="current_location_label">Localisation actuelle</string>
+    <string name="current_location_loading">Récupération de la localisation...</string>
+    <string name="current_location_unavailable">Localisation indisponible</string>
 </resources>

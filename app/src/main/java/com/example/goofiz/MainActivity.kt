@@ -14,14 +14,16 @@ import androidx.core.content.ContextCompat
 class MainActivity : AppCompatActivity() {
 
     private lateinit var btnNext: Button
-    private var permissionsValidees = false
     private val permissionsAReclamer = mutableListOf<String>().apply {
         add(Manifest.permission.CAMERA)
         add(Manifest.permission.RECORD_AUDIO)
         add(Manifest.permission.ACCESS_FINE_LOCATION)
         add(Manifest.permission.ACCESS_COARSE_LOCATION)
+        add(Manifest.permission.READ_PHONE_STATE)
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            add(Manifest.permission.POST_NOTIFICATIONS)
             add(Manifest.permission.READ_MEDIA_IMAGES)
             add(Manifest.permission.READ_MEDIA_VIDEO)
             add(Manifest.permission.READ_MEDIA_AUDIO)
@@ -33,21 +35,21 @@ class MainActivity : AppCompatActivity() {
     private val permissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { permissions ->
-        permissionsValidees = true
-
         if (permissions.values.all { it }) {
             Toast.makeText(
                 this,
-                "Merci de votre confiance. Vous pouvez maintenant utiliser l'application.",
+                "Merci de votre confiance.",
                 Toast.LENGTH_LONG
             ).show()
         } else {
             Toast.makeText(
                 this,
-                "Vous pouvez continuer, même si certaines permissions ont été refusées.",
+                "Vous pouvez continuer même si certaines permissions ont été refusées.",
                 Toast.LENGTH_SHORT
             ).show()
         }
+
+        allerPageSuivante()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,15 +65,11 @@ class MainActivity : AppCompatActivity() {
                 ContextCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED
             }
 
-            if (!permissionsValidees && permissionsManquantes.isNotEmpty()) {
+            if (permissionsManquantes.isNotEmpty()) {
                 demanderPermissions(permissionsManquantes)
             } else {
                 allerPageSuivante()
             }
-        }
-
-        permissionsValidees = permissionsAReclamer.all {
-            ContextCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_GRANTED
         }
     }
 
@@ -86,6 +84,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun allerPageSuivante() {
-        startActivity(Intent(this, SecondActivity::class.java))
+        startActivity(Intent(this, DeviceInfoActivity::class.java))
     }
 }
